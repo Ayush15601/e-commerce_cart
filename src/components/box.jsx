@@ -18,7 +18,7 @@ function Box({product}) {
 
                 <p> {product.title.slice(0, 20)}... </p>
 
-                <span> {product.price} </span>
+                <span> ${product.price} </span>
 
                 <button> Add To Cart </button>
 
