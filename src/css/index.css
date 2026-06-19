@@ -81,7 +81,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: var(--bg2);
 }
 
 ::-webkit-scrollbar-thumb {

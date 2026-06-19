@@ -6,19 +6,23 @@ function Box({product}) {
     
     <>
     
-        <div>
+        <div className="b_box">
 
-            <div>
+            <div className="b_img_box">
 
-                <img src={product.image} alt={product.title} />
+                <img className="b_img" src={product.image} alt={product.title} />
 
             </div>
 
-            <p> {product.title} </p>
+            <div className="b_list">
 
-            <span> {product.price} </span>
+                <p> {product.title.slice(0, 20)}... </p>
 
-            <button> Add To Cart </button>
+                <span> {product.price} </span>
+
+                <button> Add To Cart </button>
+
+            </div>
 
         </div>
     

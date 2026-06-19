@@ -3,6 +3,8 @@ import Box from "../components/box"
 import { getproduct } from "../api/api"
 import { useState, useEffect } from "react"
 
+import "../css/home.css"
+
 function Home() {
 
     const [product, setproduct] = useState([])
@@ -42,7 +44,7 @@ function Home() {
 
                 {err && <div className="h_error"> {err} </div>}
             
-                {loading ? (<div className="h-loading"> loading poducts... </div>) : (<div className="h-box"> {product.map((item) => (<Box product={item} key={item.id}/>))} </div>)}
+                {loading ? (<div className="h_loading"> <p> loading poducts... </p> </div>) : (<div className="h_box"> {product.map((item) => (<Box product={item} key={item.id}/>))} </div>)}
          
            </div>
         
