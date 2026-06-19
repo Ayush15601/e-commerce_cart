@@ -16,7 +16,7 @@ function Box({product}) {
 
             <div className="b_list">
 
-                <p> {product.title.slice(0, 20)}... </p>
+                <p> {product.title.length > 20 ? ` ${product.title.slice(0, 18)}... ` : product.title} </p>
 
                 <span> ${product.price} </span>
 
