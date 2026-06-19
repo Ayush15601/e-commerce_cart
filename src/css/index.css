@@ -10,11 +10,12 @@
 }
 
 :root {
-  --bg: black;
-  --bg2: #212121;
-  --bg3: #121212;
+  --bg: white;
+  --bg2: #121212;
+  --bg3: #212121;
   --border: rgba(255, 255, 255, 0.2);
   --text: white;
+  --text2: black;
 }
 
 /* Root elements */
@@ -31,7 +32,7 @@ body,
 }
 
 #root {
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
 }
 

@@ -1,0 +1,16 @@
+.n_navbar {
+    background-color: var(--bg2);
+    max-width: 96rem;
+    width: 100%;
+    height: 4rem;
+    color: var(--text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+}
+
+.n_links {
+    display: flex;
+    column-gap: 1.5rem;
+}
