@@ -10,10 +10,8 @@
 }
 
 :root {
-  --bg: white;
-  --bg2: #121212;
-  --bg3: #212121;
-  --border: rgba(255, 255, 255, 0.2);
+  --bg: #EDEDED;
+  --bg2: #C1C1C1;
   --text: white;
   --text2: black;
 }
@@ -81,14 +79,14 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg2);
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--bg2);
 
   /* Uses your theme border color */
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
