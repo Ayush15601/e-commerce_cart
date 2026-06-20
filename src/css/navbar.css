@@ -16,4 +16,5 @@
 .n_links {
     display: flex;
     column-gap: 1.5rem;
+    color: rgb(53, 132, 235);
 }

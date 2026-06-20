@@ -1,14 +1,24 @@
 import Home from "./pages/home"
+import { Route, Routes } from "react-router-dom"
+import Cart from "./pages/cart"
 
 function App() {
  
     return (
+    
     <>
-    
-        <Home />
-    
+
+        <Routes>
+
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+
+        </Routes>
+ 
     </>
-  )
+  
+    )
+
 }
 
 export default App

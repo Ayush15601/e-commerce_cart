@@ -28,7 +28,7 @@ function Box({product}) {
     
     </>
   
-)
+    )
 
 }
 
