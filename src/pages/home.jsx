@@ -1,46 +1,31 @@
 import Navbar from "../components/navbar"
 import Box from "../components/box"
-import { getproduct } from "../api/api"
 import { useState, useEffect } from "react"
 
 import "../css/home.css"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchProducts } from "../feature/counterslice"
 
 function Home() {
 
-    const [product, setproduct] = useState([])
-    const [err, seterr] = useState(null)
-    const [loading, setloading] = useState(false)
     const [query, setquery] = useState("")
     const [submited, setsubmited] = useState("")
 
+    const {item: product, status, error} = useSelector((state) => state.product)
+    const dispatch = useDispatch()
+
     useEffect( () => {
 
-        const loadproducts = async() => {
-
-            try{
-                setloading(true)
-                const getproducts = await getproduct()
-                setproduct(getproducts)
-            }
-
-            catch(err){
-                console.log("Data is not loaded due to", err)
-                seterr("Failed to load products...")
-            }
-
-            finally{
-                setloading(false)
-            }
+        if(status === "idel"){
+            dispatch(fetchProducts())
         }
-
-        loadproducts()
-    }, [])
+    }, [status])
 
     const load = (e) => {
 
         e.preventDefault()
 
-        if(loading) return
+        if(status === "loading") return
 
         setsubmited(query)
     }
@@ -73,11 +58,9 @@ function Home() {
 
            <div>
 
-                {err && <div className="h_error"> {err} </div>}
-            
-                {/* {loading ? (<div className="h_loading"> <p> loading poducts... </p> </div>) : (<div className="h_box"> {product.map((item) => (<Box product={item} key={item.id}/>))} </div>)} */}
+                {(status === "failed") && <div className="h_error"> {error} </div>}
 
-                {loading ? ( <div className="h-loading"> loading products... </div> ) : (<div className="h_box"> {filteredProducts.map((item) => ( <Box product={item} key={item.id}/> ))} </div> )}
+                {(status === "loading") ? ( <div className="h_loading"> loading products... </div> ) : (<div className="h_box"> {filteredProducts.map((item) => ( <Box product={item} key={item.id}/> ))} </div> )}
          
            </div>
         
