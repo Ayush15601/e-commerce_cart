@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux"
 import "../css/box.css"
 
 function Box({product}) {
+
+    const dispatch = useDispatch()
 
   return (
     
@@ -20,7 +23,7 @@ function Box({product}) {
 
                 <span> ${product.price} </span>
 
-                <button> Add To Cart </button>
+                <button onClick={() => dispatch(alert(product.id))}> Add To Cart </button>
 
             </div>
 

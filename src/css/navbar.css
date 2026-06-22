@@ -1,5 +1,5 @@
 .n_navbar {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--navbar);
     backdrop-filter: blur(10px);
     width: 97rem;
     width: 100%;
