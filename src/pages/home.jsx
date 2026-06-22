@@ -1,18 +1,20 @@
 import Navbar from "../components/navbar"
 import Box from "../components/box"
-import { useState, useEffect } from "react"
 
 import "../css/home.css"
+
+import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts } from "../feature/counterslice"
 
 function Home() {
 
-    const [query, setquery] = useState("")
     const [submited, setsubmited] = useState("")
-
+    const [query, setquery] = useState("")
+    
     const {item: product, status, error} = useSelector((state) => state.product)
     const dispatch = useDispatch()
+    
 
     useEffect( () => {
 

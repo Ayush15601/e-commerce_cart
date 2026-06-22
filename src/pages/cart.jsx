@@ -1,10 +1,14 @@
 import "../css/cart.css"
+
 import Navbar from "../components/navbar"
-import { useState } from "react"
+import Cart_box from "../components/cartbox"
+
+import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 function Cart() {
 
-    const [text, settext] = useState(0)
+    const {item: cart, totalPrice} = useSelector((state) => state.cart )
 
   return (
     
@@ -12,8 +16,7 @@ function Cart() {
     
         <Navbar />
 
-        <div className="c_div">
-
+        <div className="c_div"> 
 
             <div className="c_main_box">
 
@@ -21,46 +24,26 @@ function Cart() {
 
                 <br />
 
-                <div className="c_box">
-
-                    <div className="c_img">
-
-                        <img src="ss" alt="image" />
-
-                    </div>
-
-                    <div className="c_list">
-
-                        <p> Prise $200 </p>
-
-                        <div className="c_input">
-
-                            <input type="text" onClick={(e) => settext(e.target.value)} value={text} name="text"/>
-
-                            <button > Update </button>
-
-                            <button> Remove </button>
-
-                        </div>
-
-                    </div>
-                
-                </div>
+                    {cart.map( (item) => <Cart_box cart={item} key={item.id}/> )}
 
                 <br /><br />
                 
                 <div className="c_p">
 
-                    <p> Total Prize  $200</p>
+                    <p> Total Prize {totalPrice} </p>
 
                 </div>
 
                 <br />
 
-                <button className="c_btn"> Back to Shoping </button>
+                <Link to="/"> 
+                
+                    <button className="c_btn"> Back to Shoping </button>
+                
+                </Link>
 
             </div>
-        
+
         </div>
 
     </>
