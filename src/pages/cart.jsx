@@ -24,13 +24,11 @@ function Cart() {
 
                 <br />
 
-                    {cart.map( (item) => <Cart_box cart={item} key={item.id}/> )}
-
-                <br /><br />
+                    {(cart.length === 0) ? (<div className="c_empty"> <h2> Your Cart Is Empty </h2> </div>) : (cart.map( (item) => <Cart_box cart={item} key={item.id}/> ))}
                 
                 <div className="c_p">
 
-                    <p> Total Prize {totalPrice} </p>
+                    <p> Total Prize ${totalPrice} </p>
 
                 </div>
 

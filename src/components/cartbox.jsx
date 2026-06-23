@@ -1,17 +1,24 @@
 import "../css/cartbox.css"
 
-import { useDispatch } from "react-redux"
-import { useState } from "react"
-import { removeFromCart } from "../feature/cartslice"
+import { useDispatch, useSelector } from "react-redux"
+import { removeFromCart, updateItemQuantity, updateTempQuatnity } from "../feature/cartslice"
 
 function Cart_box({cart}) {
 
-    const [text, settext] = useState(0)
+    const {tempItem} = useSelector( (state) => state.cart)
 
     const dispatch = useDispatch()
 
     const handleRemove = () => {
         dispatch(removeFromCart(cart))
+    }
+
+    const handleUpdate = (id) => {
+        dispatch(updateItemQuantity(id))
+    }
+
+    const handleUpdateQuantity = (id, quantity) => {
+        dispatch(updateTempQuatnity({id, quantity}))
     }
 
     return(
@@ -32,9 +39,9 @@ function Cart_box({cart}) {
 
                     <div className="c_input">
 
-                        <input type="text" onClick={(e) => settext(e.target.value)} value={text} name="text"/>
+                        <input type="number" min="1"  value={tempItem.find(tempItem => tempItem.id === cart.id ) ?.quantity || cart.quantity} onChange={ (e) => handleUpdateQuantity(cart.id, parseInt(e.target.value))}/>
 
-                        <button > Update </button>
+                        <button onClick={() => handleUpdate({id: cart.id})}> Update </button>
 
                         <button onClick={handleRemove}> Remove </button>
 
