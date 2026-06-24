@@ -19,13 +19,14 @@
 }
 
 [data-theme="dark"] {
-  --bg: #1a1a2e;
-  --bg2: #16213e;
-  --text: #e0e0e0;
-  --text2: #e0e0e0;
-  --navbar: rgba(22, 33, 62, 0.9);
-  --border: #e0e0e0;
+  --bg: #111111;
+  --bg2: #2C2C2C;
+  --text: black;
+  --text2: white;
+  --navbar: rgba(26, 26, 26, 0.8);
+  --border: white;
 }
+
 
 /* Root elements */
 html,
@@ -105,13 +106,13 @@ button {
 }
 
 @media(max-width: 1024px) {
-    html {
-        font-size: 70%;
-    }
+  html {
+    font-size: 70%;
+  }
 }
 
 @media(max-width: 815px) {
-    html {
-        font-size: 70%;
-    }
+  html {
+    font-size: 70%;
+  }
 }

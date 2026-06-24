@@ -14,7 +14,7 @@ function Cart_box({cart}) {
     }
 
     const handleUpdate = (id) => {
-        dispatch(updateItemQuantity(id))
+        dispatch(updateItemQuantity({ id }))
     }
 
     const handleUpdateQuantity = (id, quantity) => {
@@ -39,9 +39,9 @@ function Cart_box({cart}) {
 
                     <div className="c_input">
 
-                        <input type="number" min="1"  value={tempItem.find(tempItem => tempItem.id === cart.id ) ?.quantity || cart.quantity} onChange={ (e) => handleUpdateQuantity(cart.id, parseInt(e.target.value))}/>
+                        <input type="number" min="1"  value={tempItem.find(tempItem => tempItem.id === cart.id ) ?.quantity || cart.quantity} onChange={ (e) => handleUpdateQuantity(cart.id, Number(e.target.value) || 1)}/>
 
-                        <button onClick={() => handleUpdate({id: cart.id})}> Update </button>
+                        <button onClick={() => handleUpdate(cart.id)}> Update </button>
 
                         <button onClick={handleRemove}> Remove </button>
 

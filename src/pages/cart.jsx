@@ -36,7 +36,7 @@ function Cart() {
 
                 <Link to="/"> 
                 
-                    <button className="c_btn"> Back to Shoping </button>
+                    <button className="c_btn"> Back to Shopping </button>
                 
                 </Link>
 

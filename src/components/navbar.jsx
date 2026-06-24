@@ -9,7 +9,7 @@ function Navbar() {
     const cart = useSelector((state) => state.cart.item)
 
     const [theme, setTheme] = useState(() => {
-        return localStorage.getItem("theme") || "light"
+        return localStorage.getItem("theme") || "dark"
     })
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function Navbar() {
     }, [theme])
 
     const toggleTheme = () => {
-        setTheme(prev => prev === "light" ? "dark" : "light")
+        setTheme(theme === "light" ? "dark" : "light")
     }
 
     return (

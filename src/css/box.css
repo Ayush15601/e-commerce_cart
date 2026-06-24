@@ -33,7 +33,7 @@
 .b_list button {
     background-color: orange;
     height: 2rem;
-    border: 2px solid black;
+    border: 2px solid var(--border);
 }
 
 @media(max-width: 815px) {
