@@ -18,3 +18,9 @@
     column-gap: 1.5rem;
     color: rgb(53, 132, 235);
 }
+
+@media(max-width: 815px) {
+    .n_navbar {
+        padding: 1rem 2rem;
+    }
+}

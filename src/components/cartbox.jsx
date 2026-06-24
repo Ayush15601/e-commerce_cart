@@ -35,7 +35,7 @@ function Cart_box({cart}) {
 
                 <div className="c_list">
 
-                    <p> Prise ${cart.price} </p>
+                    <p> Price ${cart.price} </p>
 
                     <div className="c_input">
 

@@ -94,3 +94,15 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bg2);
 }
+
+@media(max-width: 1024px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media(max-width: 815px) {
+    html {
+        font-size: 70%;
+    }
+}

@@ -26,7 +26,7 @@ export const cartSlice = createSlice({
 
             state.tempItem = [...state.item]
             
-            state.totalPrice = state.item.reduce( (sum, item) => sum + item.price * item.quantity, 0)
+            state.totalPrice = Number(state.item.reduce( (sum, item) => sum + item.price * item.quantity, 0).toFixed(2))
         },
 
         updateTempQuatnity: (state, action) => {
@@ -47,7 +47,7 @@ export const cartSlice = createSlice({
                 cartItem.quantity = tempItem.quantity
             }
            
-            state.totalPrice = state.item.reduce( (sum, item) => sum + item.price * item.quantity, 0)
+            state.totalPrice = Number(state.item.reduce( (sum, item) => sum + item.price * item.quantity, 0).toFixed(2))
         },
         
         removeFromCart: (state, action) => {
@@ -56,7 +56,7 @@ export const cartSlice = createSlice({
             
             state.tempItem = [...state.item]
             
-            state.totalPrice = state.item.reduce( (sum, item) => sum + item.price * item.quantity, 0)
+            state.totalPrice = Number(state.item.reduce( (sum, item) => sum + item.price * item.quantity, 0).toFixed(2))
     }
 }
 }) 

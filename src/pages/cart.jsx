@@ -28,7 +28,7 @@ function Cart() {
                 
                 <div className="c_p">
 
-                    <p> Total Prize ${totalPrice} </p>
+                    <p> Total Price ${totalPrice.toFixed(2)} </p>
 
                 </div>
 
