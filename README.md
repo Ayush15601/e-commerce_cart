@@ -109,16 +109,6 @@ Open `http://localhost:5173/` in your browser to view the application.
 
 ---
 
-## 📈 Future Enhancements
-
-- **Debounced Search**: Reduce state updates by triggering filter only after the user stops typing.
-- **Pagination / Load More**: Handle large product lists efficiently.
-- **Product Detail Page**: Dedicated page for each product with full description and reviews.
-- **Checkout Flow**: Mock checkout with form validation.
-- **Animations**: Add skeleton loaders and transition animations.
-
----
-
 ## 👤 Author
 
 - **Ayush**
