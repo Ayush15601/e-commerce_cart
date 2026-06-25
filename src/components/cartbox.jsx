@@ -39,7 +39,7 @@ function Cart_box({cart}) {
 
                     <div className="c_input">
 
-                        <input type="number" min="1"  value={tempItem.find(tempItem => tempItem.id === cart.id ) ?.quantity || cart.quantity} onChange={ (e) => handleUpdateQuantity(cart.id, Number(e.target.value) || 1)}/>
+                        <input type="number" min="1"  value={tempItem.find(item => item.id === cart.id ) ?.quantity || cart.quantity} onChange={ (e) => handleUpdateQuantity(cart.id, Number(e.target.value) || 1)}/>
 
                         <button onClick={() => handleUpdate(cart.id)}> Update </button>
 

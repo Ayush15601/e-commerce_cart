@@ -15,14 +15,13 @@ export const cartSlice = createSlice({
 
         addToCart: (state, action) => {
 
-            const existingItem = state.item.find( (item) => item.id == action.payload.id)
+            const existingItem = state.item.find( (item) => item.id === action.payload.id)
 
-            if(existingItem){
-                return
+            if(!existingItem){
 
-            } else{
+                // insdead of writing manually like {id: action.payload.id, name: action.payload.name, price: action.payload.price, quantity: 1}
                 state.item.push({...action.payload, quantity: 1})   
-            }  
+            }
 
             state.tempItem = [...state.item]
             
@@ -51,7 +50,8 @@ export const cartSlice = createSlice({
         },
         
         removeFromCart: (state, action) => {
-            
+
+            // if original array gets unmodified we need to storr new arr into seond varible
             state.item = state.item.filter( (item) => item.id !== action.payload.id )
             
             state.tempItem = [...state.item]

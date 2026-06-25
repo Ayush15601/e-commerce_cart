@@ -3,12 +3,12 @@ import "../css/box.css"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../feature/cartslice"
 
-function Box({product}) {
+function Box({filterProducts}) {
 
     const dispatch = useDispatch()
 
     const handleCart = () => {
-        dispatch(addToCart(product))
+        dispatch(addToCart(filterProducts))
     }
 
   return (
@@ -19,15 +19,15 @@ function Box({product}) {
 
             <div className="b_img_box">
 
-                <img className="b_img" src={product.image} alt={product.title} />
+                <img className="b_img" src={filterProducts.image} alt={filterProducts.title} />
 
             </div>
 
             <div className="b_list">
 
-                <p> {product.title.length > 20 ? ` ${product.title.slice(0, 18)}... ` : product.title} </p>
+                <p> {filterProducts.title.length > 20 ? ` ${filterProducts.title.slice(0, 18)}... ` : filterProducts.title} </p>
 
-                <span> ${product.price} </span>
+                <span> ${filterProducts.price} </span>
 
                 <button onClick={handleCart}> Add To Cart </button>
 

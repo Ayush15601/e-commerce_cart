@@ -62,7 +62,7 @@ function Home() {
 
                 {(status === "failed") && <div className="h_error"> {error} </div>}
 
-                {(status === "loading") ? ( <div className="h_loading"> loading products... </div> ) : (<div className="h_box"> {filteredProducts.map((item) => ( <Box product={item} key={item.id}/> ))} </div> )}
+                {(status === "loading") ? ( <div className="h_loading"> loading products... </div> ) : (<div className="h_box"> {filteredProducts.map((item) => ( <Box filterProducts={item} key={item.id}/> ))} </div> )}
          
            </div>
         
